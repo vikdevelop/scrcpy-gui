@@ -11,8 +11,6 @@ HOME = os.path.expanduser('~')
 date = date.today()
 
 class Dialog_notinstalled(Gtk.Dialog):
-    """Exemplo de uma janela de dialogo personalizada."""
-
     def __init__(self, parent):
         super().__init__(transient_for=parent, use_header_bar=True)
         self.parent = parent
