@@ -1,14 +1,10 @@
 import gi
 import os
 import sys
-import glob
-import shutil
-from datetime import date
 gi.require_version("Gtk", "4.0")
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw
 HOME = os.path.expanduser('~')
-date = date.today()
 
 class Dialog_notinstalled(Gtk.Dialog):
     def __init__(self, parent):
