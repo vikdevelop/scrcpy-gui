@@ -16,13 +16,11 @@ class Dialog_notinstalled(Gtk.Dialog):
         self.set_modal(modal=True)
         self.connect('response', self.dialog_response)
 
-        # Criando os botões.
         self.add_buttons(
             '_Cancel', Gtk.ResponseType.CANCEL,
             '_OK', Gtk.ResponseType.OK,
         )
 
-        # Adicionando class action nos botões.
         btn_ok = self.get_widget_for_response(
             response_id=Gtk.ResponseType.OK,
         )
@@ -32,7 +30,6 @@ class Dialog_notinstalled(Gtk.Dialog):
         )
         btn_cancel.get_style_context().add_class(class_name='destructive-action')
 
-        # Acessando o box do dialogo.
         content_area = self.get_content_area()
         content_area.set_orientation(orientation=Gtk.Orientation.VERTICAL)
         content_area.set_spacing(spacing=12)
@@ -48,16 +45,13 @@ class Dialog_notinstalled(Gtk.Dialog):
         self.show()
 
     def dialog_response(self, dialog, response):
-        # Verificando qual botão foi pressionado.
         if response == Gtk.ResponseType.OK:
             print('Button {OK} is clicked.')
-            #self.parent.label.set_text(str=f'Botão CANCELAR pressionado')
 
             dialog.close()
 
         elif response == Gtk.ResponseType.CANCEL:
             print('Button {CANCEL} is clicked.')
-            #self.parent.label.set_text(str=f'Botão CANCELAR pressionado')
 
             dialog.close()
 
